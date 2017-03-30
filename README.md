@@ -1,6 +1,6 @@
 # \<lrndesign-drawer\>
 
-
+Demo: https://lrnwebcomponents.github.io/lrndesign-drawer/components/lrndesign-drawer/
 
 ## Install the Polymer-CLI
 
