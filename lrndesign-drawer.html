@@ -1,13 +1,14 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../app-layout/app-layout.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../lrn-icons/lrn-icons.html">
 
 
 <!--
 `lrndesign-drawer`
 
 
-@demo demo/index.html 
+@demo demo/index.html
 -->
 
 <dom-module id="lrndesign-drawer">
@@ -15,7 +16,7 @@
     <style>
       :host {
         display: block;
-        --lrndesign-drawer-width: 50%;
+        --lrndesign-drawer-width: 30%;
       }
       app-header {
         z-index: 100;
@@ -30,7 +31,7 @@
       }
     </style>
     <app-header>
-      <app-drawer opened="{{opened}}">
+      <app-drawer opened="{{opened}}" align="{{align}}">
         <content></content>
       </app-drawer>
     </app-header>
@@ -50,7 +51,11 @@
         icon: {
           type: String,
           value: 'icon'
-        }
+        },
+        align: {
+          type: String,
+          value: 'left'
+        },
       },
       ready: function() {
         let root = this;
