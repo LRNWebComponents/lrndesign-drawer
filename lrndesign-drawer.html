@@ -35,7 +35,7 @@
         <content></content>
       </app-drawer>
     </app-header>
-    <paper-icon-button icon="{{icon}}"></paper-icon-button>
+    <paper-icon-button icon="{{icon}}" alt="{{alt}}"></paper-icon-button>
   </template>
 
   <script>
@@ -56,6 +56,10 @@
           type: String,
           value: 'left'
         },
+        alt: {
+          type: String,
+          value: ''
+        }
       },
       ready: function() {
         let root = this;
