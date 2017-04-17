@@ -2,7 +2,7 @@
 <link rel="import" href="../app-layout/app-layout.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../lrn-icons/lrn-icons.html">
-
+<link rel="import" href="../hax-behaviors/hax-behaviors.html">
 
 <!--
 `lrndesign-drawer`
@@ -32,7 +32,10 @@
     </style>
     <app-header>
       <app-drawer opened="{{opened}}" align="{{align}}">
+      <hax-editbar edit="{{edit}}"></hax-editbar>
+      <hax-editable edit="{{edit}}" type="html">
         <content></content>
+      </hax-editable>
       </app-drawer>
     </app-header>
     <paper-icon-button icon="{{icon}}" alt="{{alt}}"></paper-icon-button>
@@ -42,7 +45,7 @@
     Polymer({
 
       is: 'lrndesign-drawer',
-
+      behaviors: [HAXBehaviors.EditBehaviors],
       properties: {
         opened: {
           type: Boolean,
