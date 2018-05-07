@@ -1,8 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../app-layout/app-layout.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../lrn-icons/lrn-icons.html">
-<link rel="import" href="../hax-behaviors/hax-behaviors.html">
 <link rel="import" href="../paper-tooltip/paper-tooltip.html">
 
 <!--
@@ -33,21 +31,17 @@
     </style>
     <app-header>
       <app-drawer opened="{{opened}}" align="{{align}}">
-      <hax-editbar edit="{{edit}}"></hax-editbar>
-      <hax-editable edit="{{edit}}" type="html">
-        <content></content>
-      </hax-editable>
+        <slot></slot>
       </app-drawer>
     </app-header>
-    <paper-icon-button icon="{{icon}}" alt="{{alt}}" id="flyout-drawer"></paper-icon-button>
-    <paper-tooltip for="flyout-drawer">{{alt}}</paper-tooltip>
+    <paper-icon-button icon="[[icon]]" alt="[[alt]]" id="flyout-drawer"></paper-icon-button>
+    <paper-tooltip for="flyout-drawer">[[alt]]</paper-tooltip>
 
   </template>
 
   <script>
     Polymer({
       is: 'lrndesign-drawer',
-      behaviors: [HAXBehaviors.EditBehaviors],
       properties: {
         /**
          * State for if it is currently open.
@@ -89,14 +83,6 @@
           root.opened = !root.opened;
         });
       },
-      /**
-       * Demo mode.
-       */
-       _demoInit: function() {
-        this.icon = "network";
-        this.align = "right";
-        this.alt = "Open network content";
-      }
     });
   </script>
 </dom-module>
